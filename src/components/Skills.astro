@@ -1,5 +1,5 @@
 ---
-import BgSkills from "../assets/bg_skills.webp";
+import Bgskills from "../icons/Bgskills.astro";
 
 import { Image } from "astro:assets";
 
@@ -78,13 +78,7 @@ const others = [
   class="flex justify-center flex-col items-center w-screen relative z-10"
 >
   <div class="section-background">
-    <Image
-      src="/bg_skills.webp"
-      alt="Background"
-      quality={"mid"}
-      width={2310}
-      height={1565}
-    />
+    <Bgskills />
   </div>
   <div class="flex justify-center flex-col items-center mb-20">
     <h6
@@ -133,7 +127,7 @@ background-clip: text;
     class="flex flex-wrap justify-center items-center gap-12 mb-32 max-md:gap-6 max-md:px-6"
   >
   {
-    skills.map((skill) => {
+    others.map((skill) => {
       return (
         <div class="relative">
           <Image

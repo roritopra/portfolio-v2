@@ -1,0 +1,296 @@
+---
+import { Image } from "astro:assets";
+
+import Square from "../icons/Square.astro"
+---
+
+<section
+  class="relative h-full px-12 grid grid-cols-14 z-30 max-lg:grid-cols-11 pt-[9rem] pb-[46rem]"
+>
+  <div class="section-background">
+    <Square />
+  </div>
+  <article
+    style="grid-column: 4 / 12;"
+    class="flex flex-col justify-center items-center"
+  >
+    <div class="flex justify-center flex-col items-center mb-28 max-lg:mb-16">
+      <h6
+        style="background: var(--titlessubtitles, linear-gradient(89deg, #01EBA6 0%, #01D398 34.90%, #01A47D 69.79%, #018C77 97.97%));
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;"
+        class="relative text-center mb-2 text-xl font-bold tracking-tight max-md:text-base"
+      >
+        Work
+      </h6>
+      <h2
+        class="relative text-center text-white font-bold text-5xl mb-3 max-md:text-3xl"
+      >
+        Dig into my universe
+      </h2>
+    </div>
+    <div
+      class="w-full aspect-4/3 grid grid-cols-3 grid-rows-3 gap-2 relative z-10"
+    >
+      <div
+        class="w-full cursor-pointer h-full flex items-center justify-center relative p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
+        id="item-0"
+      >
+        <div
+          class="card-image flex justify-center relative items-center h-full rounded-md w-full bg-gray-800"
+        >
+          <img
+            style="max-width: 30%;
+						aspect-ratio: 1 / 1;"
+            id="image1"
+            class="object-contain py-5 transition-opacity duration-500"
+            src="/astra.webp"
+            alt=""
+          />
+          <img
+            style="max-width: 100%;
+						aspect-ratio: 1 / 1;"
+            id="image2"
+            class="hover-image w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
+            src="/astraBg.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div
+        class="w-full h-full flex items-center justify-center relative p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
+        id="item-1"
+      >
+        <div
+          class="card-image5 cursor-pointer flex justify-center relative items-center h-full rounded-md w-full bg-[#1E3932]"
+        >
+          <img
+            style="max-width: 60%;
+						aspect-ratio: 1 / 1;"
+            id="image9"
+            class="object-contain py-5 transition-opacity duration-500"
+            src="/starbucks.webp"
+            alt=""
+          />
+          <img
+            style="max-width: 100%;
+						aspect-ratio: 1 / 1;"
+            id="image10"
+            class="hover-image w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
+            src="/starbucksBg.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div
+        class="w-full h-full flex items-center justify-center relative p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
+        id="item-2"
+      >
+        <div
+          style="background: linear-gradient(180deg, #FFF 0%, #D7D0CF 100%);
+				"
+          class="card-image4 cursor-pointer flex justify-center relative items-center h-full rounded-md w-full"
+        >
+          <img
+            style="max-width: 80%;
+						aspect-ratio: 1 / 1;"
+            class="object-contain py-5 transition-opacity duration-500"
+            id="image7"
+            src="/h&m.webp"
+            alt=""
+          />
+          <img
+            style="max-width: 100%;
+						aspect-ratio: 1 / 1;"
+            id="image8"
+            class="hover-image w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
+            src="/hmBg.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div
+        class="w-full h-full flex items-center justify-center relative p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755] max-lg:p-[2px]"
+        id="item-3"
+      >
+        <div
+          class="card-image6 flex justify-center items-center h-full rounded-md w-full bg-[#F3F3F3]"
+          id="openModalBtn6"
+        >
+          <img
+            id="image11"
+            class="object-contain aspect-1/1 max-w-4/5"
+            src="/innlab.webp"
+            alt="Innlab image"
+          />
+          <img
+            id="image12"
+            class="hover-image rounded-md w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500 aspect-1/1 max-w-full"
+            src="/innlabBg.png"
+            alt="Innlab image"
+          />
+        </div>
+      </div>
+      <div
+        class="w-full h-full flex items-center justify-center relative p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
+        id="item-4"
+      >
+        <div
+          class="card-image3 cursor-pointer flex justify-center relative items-center h-full rounded-md w-full bg-white"
+        >
+          <img
+            style="max-width: 55%;
+						aspect-ratio: 0 / 0;"
+            id="image5"
+            class="object-contain py-5 transition-opacity duration-500"
+            src="/bancow.webp"
+            alt=""
+          />
+          <img
+            style="max-width: 100%;
+						aspect-ratio: 1 / 1;"
+            id="image6"
+            class="hover-image w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
+            src="/bankBg.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div
+        class="w-full h-full flex items-center justify-center relative p-1 rounded-md bg-gradient-to-t from-[#03B381] to-[#3B4755]"
+        id="item-5"
+      >
+        <div
+          class="card-image2 cursor-pointer flex justify-center relative items-center h-full rounded-md w-full bg-gray-800"
+        >
+          <img
+            style="max-width: 30%;
+						aspect-ratio: 1 / 1;"
+            id="image3"
+            class="object-contain py-5 transition-opacity duration-500"
+            src="/bitx.webp"
+            alt=""
+          />
+          <img
+            style="max-width: 100%;
+						aspect-ratio: 1 / 1;"
+            id="image4"
+            class="hover-image w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity duration-500"
+            src="/bitxBg.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<script>
+  document.addEventListener("astro:page-load", function () {
+    const cardImages = document.querySelectorAll(
+      ".card-image, .card-image2, .card-image3, .card-image4, .card-image5, .card-image6"
+    );
+
+    cardImages.forEach((cardImage) => {
+      const image1 = cardImage.querySelector("img:first-of-type");
+      const image2 = cardImage.querySelector("img:last-of-type");
+
+      cardImage.addEventListener("mouseenter", () => {
+        if (image1 instanceof HTMLElement && image2 instanceof HTMLElement) {
+          image1.style.opacity = "0";
+          image2.style.opacity = "1";
+        }
+      });
+
+      cardImage.addEventListener("mouseleave", () => {
+        if (image1 instanceof HTMLElement && image2 instanceof HTMLElement) {
+          image1.style.opacity = "1";
+          image2.style.opacity = "0";
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .section-background {
+    height: auto;
+    left: 100%;
+    margin-top: 14%;
+    transform: translateX(-55%);
+    width: 230%;
+    z-index: 1;
+    mix-blend-mode: lighten;
+    pointer-events: none;
+    position: absolute;
+  }
+  .section-background img {
+    z-index: 60;
+    left: 0;
+    top: 0;
+    width: 60%;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .section-background {
+      left: 69%;
+    }
+    .section-background img {
+      width: 100%;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .section-background {
+      margin-top: 30%;
+    }
+    .section-background img {
+      width: 100%;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .section-background {
+      margin-top: 50%;
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    .section-background {
+      margin-top: 65%;
+    }
+  }
+</style>
+
+<style>
+  #item-0 {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+  #item-1 {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  #item-2 {
+    grid-row-start: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  #item-3 {
+    grid-row-start: 2;
+    grid-column-start: 3;
+
+    grid-row-end: 4;
+    grid-column-end: 4;
+  }
+  #item-4 {
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  #item-5 {
+    grid-row-start: 4;
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+</style>

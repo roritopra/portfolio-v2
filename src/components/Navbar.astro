@@ -7,7 +7,7 @@ import Linkedin from "../icons/Linkedin.astro";
 import { Image } from "astro:assets";
 
 const pathname = Astro.url.pathname;
-console.log(pathname)
+console.log(pathname);
 ---
 
 <nav id="showMenu" class="hidden">
@@ -30,9 +30,7 @@ console.log(pathname)
         target="_blank"><Behance /></a
       >
       <a href="https://GitHub.com/roritopra" target="_blank"><GitHub /></a>
-      <a href="https://www.behance.net/rodro" target='_blank"'
-        ><Behance /></a
-      >
+      <a href="https://www.behance.net/rodro" target='_blank"'><Behance /></a>
     </div>
   </div>
 </nav>
@@ -49,10 +47,34 @@ console.log(pathname)
     <ul
       class="flex text-sm [&>li>a]:transition-colors [&>li>a]:duration-500 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
     >
-      <li><a class={pathname === "/" ? "border-b-3 border-b-white/5 backdrop-blur-lg rounded" : ""} href="/">Home</a></li>
-      <li><a class={pathname === "/profile" ? "border-b-3 border-b-white/5 backdrop-blur-lg rounded" : ""} href="/profile">About me</a></li>
-      <li><a class={pathname === "/projects" ? "border-b-3 border-b-white/5 backdrop-blur-lg rounded" : ""} href="/projects">Projects</a></li>
-      <li><a class={pathname === "/contact" ? "border-b-3 border-b-white/5 backdrop-blur-lg rounded" : ""} href="/contact">Get In Touch</a></li>
+      <li>
+        <a
+          class={pathname === "/"
+            ? "border-b-3 border-b-white/5 backdrop-blur-lg rounded"
+            : ""}
+          href="/">Home</a>
+      </li>
+      <li>
+        <a
+          class={pathname === "/profile"
+            ? "border-b-3 border-b-white/5 backdrop-blur-lg rounded"
+            : ""}
+          href="/profile">About me</a>
+      </li>
+      <li>
+        <a
+          class={pathname === "/projects"
+            ? "border-b-3 border-b-white/5 backdrop-blur-lg rounded"
+            : ""}
+          href="/projects">Projects</a>
+      </li>
+      <li>
+        <a
+          class={pathname === "/contact"
+            ? "border-b-3 border-b-white/5 backdrop-blur-lg rounded"
+            : ""}
+          href="/contact">Get In Touch</a>
+      </li>
     </ul>
   </nav>
 
@@ -67,14 +89,10 @@ console.log(pathname)
         >
       </li>
       <li class="hidden xl:block sm:hidden">
-        <a href="https://GitHub.com/roritopra" target="_blank"
-          ><GitHub /></a
-        >
+        <a href="https://GitHub.com/roritopra" target="_blank"><GitHub /></a>
       </li>
       <li class="hidden xl:block sm:hidden">
-        <a href="https://www.behance.net/rodro" target='_blank"'
-          ><Behance /></a
-        >
+        <a href="https://www.behance.net/rodro" target='_blank"'><Behance /></a>
       </li>
       <li id="openMenu" class="block sm:block xl:hidden">
         <svg
@@ -103,71 +121,79 @@ console.log(pathname)
 </header>
 
 <script>
-  const listItem = document.querySelectorAll("#landing-header li");
-  const menuBackDrop = document.querySelector("#menu-backdrop") as HTMLElement;
+  document.addEventListener("astro:page-load", () => {
+    const listItem = document.querySelectorAll("#landing-header li");
+    const menuBackDrop = document.querySelector(
+      "#menu-backdrop"
+    ) as HTMLElement;
 
-  listItem.forEach((item) => {
-    item.addEventListener("mouseenter", () => {
-      const { left, top, width, height } = item.getBoundingClientRect();
+    listItem.forEach((item) => {
+      item.addEventListener("mouseenter", () => {
+        const { left, top, width, height } = item.getBoundingClientRect();
 
-      menuBackDrop.style.setProperty("--left", `${left}px`);
-      menuBackDrop.style.setProperty("--top", `${top}px`);
-      menuBackDrop.style.setProperty("--width", `${width}px`);
-      menuBackDrop.style.setProperty("--height", `${height}px`);
+        menuBackDrop.style.setProperty("--left", `${left}px`);
+        menuBackDrop.style.setProperty("--top", `${top}px`);
+        menuBackDrop.style.setProperty("--width", `${width}px`);
+        menuBackDrop.style.setProperty("--height", `${height}px`);
 
-      menuBackDrop.style.opacity = "1";
-      menuBackDrop.style.visibility = "visible";
-    });
+        menuBackDrop.style.opacity = "1";
+        menuBackDrop.style.visibility = "visible";
+      });
 
-    item.addEventListener("mouseleave", () => {
-      menuBackDrop.style.opacity = "0";
-      menuBackDrop.style.visibility = "hidden";
+      item.addEventListener("mouseleave", () => {
+        menuBackDrop.style.opacity = "0";
+        menuBackDrop.style.visibility = "hidden";
+      });
     });
   });
 </script>
 
 <script>
-  const headerEl = document.querySelector("#landing-header") as HTMLElement;
+  document.addEventListener("astro:page-load", () => {
+    const headerEl = document.querySelector("#landing-header") as HTMLElement;
 
-  const observerOptions = {
-    root: null,
-    rootMargin: "0px", // en cuanto se vea el elemento
-    threshold: 0.9, // porcentaje de visibilidad
-  };
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px", // en cuanto se vea el elemento
+      threshold: 0.9, // porcentaje de visibilidad
+    };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      const { isIntersecting } = entry;
-      if (isIntersecting) {
-        const color = entry.target.getAttribute("data-header-color");
-        if (color) {
-          headerEl.style.color = color;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const { isIntersecting } = entry;
+        if (isIntersecting) {
+          const color = entry.target.getAttribute("data-header-color");
+          if (color) {
+            headerEl.style.color = color;
+          }
         }
+      });
+    }, observerOptions);
+
+    const sectionElements = document.querySelectorAll(".landing-section");
+    sectionElements.forEach((section) => observer.observe(section));
+  });
+</script>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const openMenu = document.querySelector("#openMenu") as HTMLElement;
+    const showMenu = document.querySelector("#showMenu") as HTMLElement;
+
+    openMenu.addEventListener("click", () => {
+      if (showMenu.classList.contains("hidden")) {
+        showMenu.classList.remove("hidden");
+      } else {
+        showMenu.classList.add("hidden");
       }
     });
-  }, observerOptions);
 
-  const sectionElements = document.querySelectorAll(".landing-section");
-  sectionElements.forEach((section) => observer.observe(section));
-</script>
+    const closeMenuLinks = document.querySelectorAll(".close-menu");
 
-<script>
-  const openMenu = document.querySelector("#openMenu") as HTMLElement;
-  const showMenu = document.querySelector("#showMenu") as HTMLElement;
-
-  openMenu.addEventListener("click", () => {
-    if (showMenu.classList.contains("hidden")) {
-      showMenu.classList.remove("hidden");
-    } else {
-      showMenu.classList.add("hidden");
-    }
-  });
-
-  const closeMenuLinks = document.querySelectorAll(".close-menu");
-
-  closeMenuLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      showMenu.classList.add("hidden");
+    closeMenuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        showMenu.classList.add("hidden");
+      });
     });
   });
 </script>
