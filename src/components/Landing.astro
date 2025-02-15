@@ -1,0 +1,53 @@
+---
+import "../styles/global.css";
+import Video from "/video.webm";
+---
+
+<main class="bg-[#0C1014]">
+  <section
+    class="landing-section bg-black h-screen w-screen text-center overflow-hidden relative"
+  >
+    <div class="z-30 relative h-full flex flex-col">
+      <footer class="z-30 relative flex flex-col flex-grow justify-end pb-20">
+        <div>
+          <a
+            class="border-[3px] border-white bg-white/5 backdrop-blur-sm text-sm rounded font-medium text-white px-12 py-2 inline-block hover:bg-white hover:text-black transition-colors"
+            href="/contact"
+          >
+            Get In Touch
+          </a>
+        </div>
+      </footer>
+    </div>
+
+    <div class="absolute top-0 bottom-0 h-full w-full z-10">
+      <video
+        class="object-center object-cover h-full w-full"
+        id="myVideo"
+        autoplay
+        muted
+      >
+        <source src={Video} type="video/webm" />
+        Tu navegador no soporta el elemento video.
+      </video>
+    </div>
+  </section>
+</main>
+
+<script>
+  const video = document.getElementById("myVideo") as HTMLVideoElement | null;
+
+  setTimeout(function () {
+    if (video) {
+      video.currentTime = 0;
+      video.play();
+    }
+  }, 1500);
+
+  if (video) {
+    video.addEventListener("ended", function () {
+      video.currentTime = 12;
+      video.play();
+    });
+  }
+</script>
